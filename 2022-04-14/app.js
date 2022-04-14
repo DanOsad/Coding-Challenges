@@ -6,12 +6,11 @@
 const xMarksTheSpot = (input) => {
     let r = []
     for (let i=0; i<input.length; i++){
-          input[i].indexOf('x') != -1 ? r.push(i,input[i].indexOf('x')) : null
+        if (input[i].includes('x')) {
+            r.push([i, input[i].indexOf('x')])
+        }  
     }
-    return r.length > 2 ? r = []
-         : r == [1,0] ? r = []
-         : r == [0,0] ? r = []     
-         : r
+  	return r.length === 1 ? r[0] : r = []
   }
 
 const testCases = [
