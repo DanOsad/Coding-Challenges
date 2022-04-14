@@ -14,7 +14,7 @@ const xMarksTheSpot = (input) => {
          : r
   }
 
-testCases = [
+const testCases = [
     [xMarksTheSpot([]), []],
     [xMarksTheSpot([
                     ['o', 'o'],

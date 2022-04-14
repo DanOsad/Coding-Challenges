@@ -15,7 +15,7 @@ function vowelIndices(word){
   return r.sort((a,b)=>a-b)
 }
 
-testCases = [
+const testCases = [
     [vowelIndices("apple"), [1,5]],
     [vowelIndices("super"), [2,4]],
     [vowelIndices("orange"), [1,3,6]],
