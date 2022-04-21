@@ -10,7 +10,7 @@ function barista(arr){
       return arr.length > 0 ? r.reduce((a,b)=>a+b) : 0
   }
 
-  const testCases = [
+const testCases = [
     [barista([2,10,5,3,9]), 85],
     [barista([4,3,2]),22],
     [barista([20,5]),32],
