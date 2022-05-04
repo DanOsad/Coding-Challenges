@@ -18,7 +18,7 @@ function high(x){
     return x.split(' ')[v.indexOf(Math.max(...v))]
 }
 
-testCases = [
+const testCases = [
     [high('man i need a taxi up to ubud'), 'taxi'],
     [high('what time are we climbing up the volcano'), 'volcano'],
     [high('take me to semynak'), 'semynak'],   

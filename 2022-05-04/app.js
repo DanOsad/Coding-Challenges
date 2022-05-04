@@ -8,7 +8,7 @@ function spinWords(str){
     return r.join(' ')
   }
 
-testCases = [
+const testCases = [
     [spinWords("Welcome"), "emocleW"],
     [spinWords("Hey fellow warriors"), "Hey wollef sroirraw"],
     [spinWords("This is a test"), "This is a test"],
