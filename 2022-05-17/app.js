@@ -1,15 +1,11 @@
 // Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
 
 const persistence = num => {
-    let r = num.toString().split('').map(n=>+n).reduce((a,b)=>a*b)
-    let count = 1
-    if (num.toString().split('').length < 2) {
-      return 0
-    } else {
-        while (r.toString().length > 1) {
-            r = r.toString().split('').map(n=>+n).reduce((a,b)=>a*b)
-            count++
-        }
+    let count = 0
+    num = num.toString()
+    while (num.length>1) {
+        num = num.split('').map(n=>+n).reduce((a,b)=>a*b).toString()
+        count++
     }
     return count
 }
