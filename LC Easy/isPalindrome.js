@@ -1,3 +1,6 @@
-// https://leetcode.com/problems/palindrome-number/
+// https://leetcode.com/problems/valid-palindrome
 
-const isPalindrome = num => num.toString() == num.toString().split('').reverse().join('')
+const isPalindrome = str => {
+    let s = str.replace(/[^a-z0-9]/gi, '').toLowerCase().split('')
+    return s.join('') == s.reverse().join('')
+  }
