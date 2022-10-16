@@ -10,7 +10,7 @@ const rgb = (r,g,b) => {
     return `${convertToHex(r)}${convertToHex(g)}${convertToHex(b)}`
 }
 
-rgb(0, 0, 0)// '000000'
-rgb(0, 0, -20)// '000000'
-rgb(300,255,255)// 'FFFFFF'
-rgb(173,255,47)// 'ADFF2F'
+console.log(rgb(0, 0, 0))// '000000'
+console.log(rgb(0, 0, -20))// '000000'
+console.log(rgb(300,255,255))// 'FFFFFF'
+console.log(rgb(173,255,47))// 'ADFF2F'
