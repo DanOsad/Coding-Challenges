@@ -1,4 +1,7 @@
 # https://leetcode.com/problems/roman-to-integer
+# The intuition here is that if any smaller character comes before 
+# a bigger character, you want to subtract the value of the smaller 
+# character from the running total
 
 class Solution(object):
     def romanToInt(self, s):
