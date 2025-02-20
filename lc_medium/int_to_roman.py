@@ -19,25 +19,13 @@ class Solution:
             (1 ,"I"),
         ]
 
-        # nums = [ int(n) for n in str(num) ]
-        # print(nums)
         i = 0
         while num > 0:
             for n, r in roman_map:
-                # print(n, r)
                 if num >= n:
-                    # print(f'num={num} > n={n} == {num > n}')
                     ret += r
                     num -= n
-                    # print(f'Removing {n} | num={num}')
-                    # print("".join(ret))
                     break
-
-        # while i < len(nums):
-        #     print(nums[len(nums)-1-i])
-        #     for 
-        #     i+=1
-
         return ret
     
 cases = [ 
