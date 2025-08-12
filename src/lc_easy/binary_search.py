@@ -17,7 +17,7 @@ class Solution(object):
 
         while hi > lo:
             m = math.floor(lo + (hi-lo) / 2)
-            print('new_m', m)
+            # print('new_m', m)
             if nums[m] == target:
                 return m
             if target > nums[m]:
@@ -49,19 +49,12 @@ cases = [
     }
 ]
 
-def passed():
-    return "passed".upper()
+from tests import TestSuite
+test_suite = TestSuite(
+    **{
+        'testcases': cases,
+        'func': Solution().search
+    }
+)
 
-def failed():
-    return "failed".upper()
-
-def pass_fail(is_correct: bool):
-    return passed() if is_correct else failed()
-
-def test():
-    for i, case in enumerate(cases, 1):
-        answer = Solution().search(case['input'][0], case['input'][1])
-        is_correct = (answer == case['solution'])
-        print(f'{i}) Expected: {case["solution"]} | Answer: {answer} | {pass_fail(is_correct)}')
-
-test() 
+test_suite.run_tests()
