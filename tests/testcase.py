@@ -48,7 +48,8 @@ class TestCase:
 
     def run_test(self):
         print(f"Running test case {self.index} with input: {self.input} and expected solution: {self.solution}")
-        if isinstance(self.input, list):
+        
+        if isinstance(self.input, (list, tuple, set)):
             return self.func(*self.input)
         elif isinstance(self.input, dict):
             return self.func(**self.input)
