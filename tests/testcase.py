@@ -46,11 +46,21 @@ class TestCase:
         if not self.solution:
             raise TestCaseSolutionError("Solution must be provided")
 
+    def check_for_nested_elements(self):
+        # if isinstance(self.input, (list, tuple, set)):
+        for element in self.input:
+            if isinstance(element, (list, tuple, set)):
+                return True
+        return False
+
     def run_test(self):
         print(f"Running test case {self.index} with input: {self.input} and expected solution: {self.solution}")
         
         if isinstance(self.input, (list, tuple, set)):
-            return self.func(*self.input)
+            if self.check_for_nested_elements():
+                return self.func(*self.input)
+            else:
+                return self.func(self.input)
         elif isinstance(self.input, dict):
             return self.func(**self.input)
         else:
