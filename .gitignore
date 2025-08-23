@@ -1,5 +1,7 @@
 # DIRS
 primagen
 __pycache__
+.venv
+venv
 
 # FILES
