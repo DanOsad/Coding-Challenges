@@ -48,9 +48,9 @@ class TestCase:
 
     def check_for_nested_elements(self):
         # if isinstance(self.input, (list, tuple, set)):
-        for element in self.input:
-            if isinstance(element, (list, tuple, set)):
-                return True
+        # for element in self.input:
+        if isinstance(self.input, (list, tuple, set)):
+            return True
         return False
 
     def run_test(self):
@@ -58,13 +58,15 @@ class TestCase:
         
         if isinstance(self.input, (list, tuple, set)):
             if self.check_for_nested_elements():
-                return self.func(*self.input)
+                result = self.func(*self.input)
             else:
-                return self.func(self.input)
+                result = self.func(self.input)
         elif isinstance(self.input, dict):
-            return self.func(**self.input)
+            result = self.func(**self.input)
         else:
-            return self.func(self.input)
+            result = self.func(self.input)
+        print(f'Got result: {result}')
+        return result
     
     def determine_result(self):
         result = self.run_test()
