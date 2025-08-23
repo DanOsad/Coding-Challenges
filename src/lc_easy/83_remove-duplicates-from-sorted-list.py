@@ -1,9 +1,9 @@
 # https://leetcode.com/problems/remove-duplicates-from-sorted-list/
 # # Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode(object):
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 class Solution:
     def deleteDuplicates(self, head):
         """
@@ -14,7 +14,6 @@ class Solution:
         while curr_node:
             while curr_node.next and curr_node.next.val == curr_node.val:
                 curr_node.next = curr_node.next.next
-                    # curr_node.next.next = None
             curr_node = curr_node.next
         return head
 
@@ -34,7 +33,7 @@ from tests import TestSuite
 test_suite = TestSuite(
     **{
         'testcases': cases,
-        'func': Solution().__init__
+        'func': Solution().deleteDuplicates
     }
 )
 test_suite.run_tests()
