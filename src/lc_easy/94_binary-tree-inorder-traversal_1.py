@@ -6,11 +6,8 @@ class Solution:
         #         self.val = val
         #         self.left = left
         #         self.right = right
-    def inorderTraversal(self, root):
-        """
-        :type root: Optional[TreeNode]
-        :rtype: List[int]
-        """
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        # RECURSIVE
         visited = []
 
         def traverse(root):
@@ -19,22 +16,36 @@ class Solution:
             traverse(root.left)
             visited.append(root.val)
             traverse(root.right)
-        
+
         traverse(root)
         return visited
+
+        # ITERATIVE
+        res = []
+        stack = []
+        curr = root
+
+        while curr or stack:
+            while curr:
+                stack.append(curr)
+                curr = curr.left
+            curr = stack.pop()
+            res.append(curr.val)
+            curr = curr.right
+        return res
 
 
 cases = [
     {
-        'input': 'root = [1,null,2,3]',
+        'input': [1,None,2,3],
         'solution': [1, 3, 2]
     },
     {
-        'input': 'root = [1,2,3,4,5,null,8,null,null,6,7,9]',
+        'input': [1,2,3,4,5,None,8,None,None,6,7,9],
         'solution': [4, 2, 6, 5, 7, 1, 3, 9, 8]
     },
     {
-        'input': 'root = []',
+        'input': [],
         'solution': []
     }
 ]

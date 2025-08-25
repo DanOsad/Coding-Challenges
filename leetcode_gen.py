@@ -8,7 +8,7 @@ import requests
 from typing import Dict, List, Optional, Any
 
 class LeetCodeGraphQLGenerator:
-    def __init__(self, base_dir=os.path.join(os.getenv('HOME'), 'Coding-Challenges', 'src')):
+    def __init__(self, base_dir=os.path.join(os.path.realpath(os.path.dirname(__file__)), 'src')):
         self.base_dir = base_dir
         self.graphql_url = "https://leetcode.com/graphql/"
         self.session = requests.Session()
