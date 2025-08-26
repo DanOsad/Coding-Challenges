@@ -13,7 +13,7 @@ graph = {
 
 def dfs(graph, node):
     visited = []
-    stack = []
+    stack = [] # FILO
 
     visited.append(node)
     stack.append(node)
@@ -24,6 +24,18 @@ def dfs(graph, node):
             if child not in visited:
                 visited.append(child)
                 stack.append(child)
+
+    return visited
+
+def dfs_recursive(graph, node):
+    visited = []
+
+    def traverse(node):
+        if not node:
+            return
+        traverse(node.left)
+        visited.append(node)
+        traverse(node.right)
 
     return visited
 

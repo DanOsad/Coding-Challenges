@@ -360,6 +360,15 @@ class LeetCodeGraphQLGenerator:
         problem_id = problem_data['questionFrontendId']
         title_slug = problem_data['titleSlug']
         filename = f"{problem_id}_{title_slug}.py"
+
+        # if file already exists, append a number to avoid overwriting
+        filepath = os.path.join(dir_path, filename)
+        if os.path.exists(filepath):
+            base, ext = os.path.splitext(filename)
+            counter = 1
+            while os.path.exists(os.path.join(dir_path, f"{base}_{counter}{ext}")):
+                counter += 1
+            filename = f"{base}_{counter}{ext}"
         
         return os.path.join(dir_path, filename)
     
