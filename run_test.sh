@@ -51,9 +51,11 @@ fi
 
 echo -e "\nRunning tests for: $selected_file\n"
 
+source "$SCRIPT_DIR/.venv/bin/activate"
 export PYTHONPATH="$SCRIPT_DIR:$PYTHONPATH" 
 python3 "$selected_file"
 exit_code=$?
+deactivate
 
 if [[ $exit_code -ne 0 ]]; then
     echo -e "\nError running the script: $selected_file"
