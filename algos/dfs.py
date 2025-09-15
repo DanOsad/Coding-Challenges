@@ -20,7 +20,8 @@ def dfs(graph, node):
 
     while stack:
         s = stack.pop(-1)
-        for child in reversed(graph[s]):
+        # for child in graph[s]: # right to left
+        for child in reversed(graph[s]): # left to right
             if child not in visited:
                 visited.append(child)
                 stack.append(child)
