@@ -26,7 +26,6 @@ class Solution:
                 i += 1
                 nums[i] = nums[j]
                 j += 1
-        print(nums)
         return i + 1
 
 
