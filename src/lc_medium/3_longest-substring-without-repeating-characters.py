@@ -5,14 +5,12 @@ class Solution:
         longest_substring = 0
         while j < len(s) + 1:
             current_substring = s[i:j+1]
-            # print(f'i: {i}, j: {j}, current_substring: {current_substring}')
             if len(current_substring) == len(set(current_substring)):
                 if len(current_substring) > longest_substring:
                     longest_substring = len(current_substring)
                 j += 1
             else:
                 i += 1
-        
         return longest_substring
 
 
