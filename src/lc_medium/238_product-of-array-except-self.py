@@ -11,16 +11,12 @@ class Solution:
         for i in range(len(nums)):
             res[i] *= prefix
             prefix *= nums[i]
-            print(res)
-            print(prefix)
         
         j = len(nums) - 1
         for i in range(len(nums)):
             res[j] *= postfix
             postfix *= nums[j]
             j -= 1
-            print(res)
-            print(postfix)
 
         return res
 
