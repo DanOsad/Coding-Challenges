@@ -4,7 +4,16 @@ class Solution:
         # def isBadVersion(version: int) -> bool:
 
     def firstBadVersion(self, n: int) -> int:
+        left, right = 0, n + 1
 
+        while left < right:
+            middle = (left + right) // 2
+            if (isBadVersion(middle)):
+                right = middle
+            else:
+                left = middle + 1
+
+        return left
 
 cases = [
     {
